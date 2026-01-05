@@ -7,8 +7,10 @@ import android.app.Service
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
+import androidx.annotation.OptIn
 import androidx.core.app.NotificationCompat
 import androidx.media3.common.MediaItem
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.session.MediaSession
 
@@ -55,6 +57,7 @@ class MusicService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
 
+    @OptIn(UnstableApi::class)
     private fun createNotification(): Notification {
         val channelId = "music_channel"
 
